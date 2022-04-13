@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 
+import 'add_student.dart';
+import 'list_student.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -39,13 +42,13 @@ class _HomeState extends State<Home> {
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(
                   builder: (BuildContext context){
-                return _AddStudent();
+                return AddStudent();
               }));
             }, child: Text("Add Student")),
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(
                   builder: (BuildContext contect){
-                    return _ListStudents();
+                    return ListStudents();
                   }));
             }, child: Text("List the Student Record"))
           ],

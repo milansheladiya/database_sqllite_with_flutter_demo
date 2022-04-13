@@ -22,7 +22,6 @@ class MyDB{
         path,
         version: 1,
         onCreate: (Database db, int version) async {
-
           // when creating the db, create the table
           await db.execute('''
           create table if not exist students(
@@ -36,7 +35,7 @@ class MyDB{
             print('Table created');
           }
         });
-
+  }
     Future<Map<dynamic,dynamic>?> getStudent (int rollno) async{
 
       List<Map> maps = await db.query('students', whereArgs: [rollno]);
@@ -51,6 +50,6 @@ class MyDB{
 
     }
 
-  }
+
 
 }

@@ -50,14 +50,14 @@ class _AddStudentState extends State<AddStudent> {
               ),),
 
             ElevatedButton(onPressed: (){
-              myDB.db.rawQuery("INSERT INTO students(name, roll_no, address) values(?,?,?;",
+              myDB.db.rawQuery("INSERT INTO students(name, roll_no, address) values(?,?,?);",
                   [name.text,rollno.text,address.text]
               );
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("New Student Added")));
               name.text = "";
               rollno.text = "";
               address.text = "";
-            }, child: Text("Add Student"))
+            }, child: Text("Add Student")),
           ],
         ),
       ),
